@@ -8,12 +8,12 @@ public:
         while(left<=right )
         {   
             if(abs(nums[left])>abs(nums[right]) )
-            { cout<<nums[left]<<endl;
+            { //cout<<nums[left]<<endl;
                 temp[i--]=nums[left]*nums[left];
                 left++;
             }
             else
-            { cout<<nums[right]<<endl;
+            { //cout<<nums[right]<<endl;
                 temp[i--]=nums[right]*nums[right];
                 right--;
             }
