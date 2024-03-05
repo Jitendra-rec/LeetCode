@@ -9,9 +9,9 @@ public:
            if(s[i]!=s[j])
            return j-i+1;
            else
-           {    if(i<j)
+           {    
                  c=s[i];
-               else c='5';
+             
                while(s[i]==c && i<=j )
                {
                    cout<<s[i]<<" ";
