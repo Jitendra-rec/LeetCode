@@ -10,15 +10,19 @@ public:
         for(auto i: mp)
         {
             if(i.second>max)
-            max=i.second;
+            {max=i.second;
+            sum=1;}
+            else if (i.second==max)
+            sum++;
+
         }
-        cout<<max<<endl;
-        for(auto i:mp)
-        {     cout<<i.first<<"  "<<i.second<<endl;
-            if(i.second==max)
-            sum+=max;
-        }
-        return sum;
+        cout<<sum<<" "<<max<<endl;
+        // for(auto i:mp)
+        // {   cout<<i.first<<"  "<<i.second<<endl;
+        //     if(i.second==max)
+        //     sum+=max;
+        // }
+        return sum*max;
         
     }
 };
