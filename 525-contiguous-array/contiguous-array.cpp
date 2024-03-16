@@ -3,18 +3,25 @@ public:
     int findMaxLength(vector<int>& nums) {
         int n = nums.size();
         unordered_map<int, int> mp;
-        int sum = 0;
-        int subArray_length = 0;
-        for (int i = 0; i < n; i++) {
-            sum += nums[i] == 0 ? -1 : 1; 
-            if (sum == 0) {
-                subArray_length = i + 1;
-            } else if (mp.find(sum) != mp.end()) {
-                subArray_length = max(subArray_length, i - mp[sum]);
-            } else {
-                mp[sum] = i;
-            }
+        int sum = 0,lar=0;
+
+        for (int i = 0; i < n; i++)
+         {
+            if(nums[i]==0) sum+=-1;
+            else sum+=1;
+             if(sum==0) lar=i+1;
+            if(mp[sum]==0) mp[sum]=i+1;
+            else
+            {
+              // cout<<i-mp[sum]+1<<endl;
+                lar=max(lar,i-mp[sum]+1);
+               
+            }   
         }
-        return subArray_length;
+        if(sum==0)
+        return n;
+        for(auto i:mp)
+        cout<<i.first<<" "<<i.second<<endl;
+        return lar;
     }
 };
