@@ -1,11 +1,11 @@
 class Solution {
 public:
     int maxSubarrayLength(vector<int>& nums, int k) {
-        int ans=0;
+        int ans=0,l=0;
         unordered_map<int,int>mp;
         int n=size(nums);
 
-        for(int l=0,r=0;r<n;r++){
+        for(int r=0;r<n;r++){
             mp[nums[r]]++; //inserting value in window from right 
         //if newly inserted element exceed frequencey poped it out from left   
             if(mp[nums[r]]>k){
