@@ -14,13 +14,16 @@ public:
         ListNode* a=head,*b=head;
         while(b!=NULL)
         {
+        b=b->next;
+   
+        if(b!=NULL)
+        b=b->next;
            
-            b=b->next;
-            if(b!=NULL)
-            b=b->next;
-            else return a;
-             a=a->next;
+        else return a;
+         a=a->next;
+       
         }
+        
         return a;
 
         
