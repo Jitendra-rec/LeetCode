@@ -1,19 +1,31 @@
 class Solution {
 public:
     string makeGood(string s) {
-        ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
+        stack<char>st;
+        string t="";
+        
+        for(int i=0;i<s.length();i++)
+        {
+            if(st.empty())
+            {
+                st.push(s[i]);
+            }
+            else
+            {
+                char c=st.top();
+                if(c-32==s[i] || c+32==s[i])
+                st.pop();
+                else
+                st.push(s[i]);
 
-        string ans="";
-        stack<char> st;
-        for(int i=0;i<s.size();i++){
-            if(st.empty())st.push(s[i]);
-            else if(abs(st.top()-s[i])==32)st.pop();
-            else st.push(s[i]);
+            }
         }
-        while(!st.empty()){
-            ans=st.top()+ans;
+        while(!st.empty())
+        {
+            t=st.top()+t;
             st.pop();
         }
-        return ans;
+        return t;
+
     }
 };
