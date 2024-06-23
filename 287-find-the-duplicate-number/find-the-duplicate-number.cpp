@@ -6,7 +6,7 @@ public:
        mp[i]++;
 
        for(auto i:nums)
-       { //cout<<mp[i]<<" ="<<
+       { 
             if(mp[i]>1)
             return i;
        }
