@@ -1,9 +1,18 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        int xo=0;
-        for(int i=0;i<nums.size();i++)
-        xo^=nums[i];
-        return xo;
+        sort(nums.begin(),nums.end());
+    int i=0;
+        while(i<nums.size())
+        {
+            if((i+1)<nums.size() && nums[i]==nums[i+1])
+            {
+                i+=2;
+            }
+            else
+            return nums[i];
+        }
+
+        return nums[i];
     }
 };
