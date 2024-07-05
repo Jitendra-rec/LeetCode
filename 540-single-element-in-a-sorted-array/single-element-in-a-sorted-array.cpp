@@ -18,7 +18,7 @@ public:
 
         if(left & 1)
         {
-            ans=nums[left];
+            //ans=nums[left];
             end=mid-1;
         }
         else
