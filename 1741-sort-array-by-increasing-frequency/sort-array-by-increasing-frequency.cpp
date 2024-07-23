@@ -9,11 +9,10 @@ public:
             mp[i]++;
         }
 
-        sort(nums.begin(), nums.end(), [mp](int a, int b) {
+        sort(nums.begin(), nums.end(), [&mp](int &a, int &b) {
             // If frequencies are different, sort by frequency
-             unordered_map<int, int>m=mp;
-            if (m[a] != m[b]) {
-                return m[a] < m[b];
+            if (mp[a] != mp[b]) {
+                return mp[a] < mp[b];
             }
             // If frequencies are the same, sort by value in decreasing order
             return a > b;
