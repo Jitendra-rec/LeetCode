@@ -10,64 +10,63 @@
  */
 class Solution {
 public:
-    ListNode* reverse(ListNode* l1)
+    ListNode* reverse(ListNode* prev, ListNode* curr)
     {
-        ListNode* prev=NULL,*curr=l1,*temp;
-        while(curr!=NULL)
-        {
-            temp=curr->next;
-            curr->next=prev;
-            prev=curr;
-            curr=temp;
-        }
+        if(curr==NULL)
         return prev;
+        ListNode* f=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=f;
+        return reverse(prev,curr);
+        
+        
     }
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode* head=new  ListNode(-1);
-        int carry=0;
-       // l1=reverse(l1);
-        //l2=reverse(l2);
-        ListNode* rt=head;
-
+       // l1=reverse(NULL,l1);
+       // l2=reverse(NULL,l2);
+        int carry=0,num=0;
+        ListNode* t=new ListNode(-1);
+        ListNode* head=t;
+        
         while(l1!=NULL && l2!=NULL)
         {
-             int data=l1->val+l2->val+carry;
-             carry=data/10;
-             data=data%10;
-             ListNode* temp=new  ListNode(data);
-             head->next=temp;
-             head=head->next;
-             l1=l1->next;
-             l2=l2->next;
+            num=carry+l1->val+l2->val;
+            carry=num/10;
+            num=num%10;
+            ListNode* temp=new ListNode(num);
+            t->next=temp;
+            t=t->next;
+            l1=l1->next;
+            l2=l2->next;
         }
-         while(l1!=NULL )
+                while(l1!=NULL)
         {
-             int data=l1->val+carry;
-             carry=data/10;
-             data=data%10;
-             ListNode* temp=new  ListNode(data);
-             head->next=temp;
-             head=head->next;
-             l1=l1->next;
+            num=carry+l1->val;
+            carry=num/10;
+            num=num%10;
+            ListNode* temp=new ListNode(num);
+            t->next=temp;
+            t=t->next;
+            l1=l1->next;
+         
         }
-           while(l2!=NULL )
+                while(l2!=NULL)
         {
-             int data=l2->val+carry;
-             carry=data/10;
-             data=data%10;
-             ListNode* temp=new  ListNode(data);
-             head->next=temp;
-             head=head->next;
-             l2=l2->next;
+            num=carry+l2->val;
+            carry=num/10;
+            num=num%10;
+            ListNode* temp=new ListNode(num);
+            t->next=temp;
+            t=t->next;
+            l2=l2->next;
         }
-        if(carry>0)
+        if(carry!=0)
         {
-             ListNode* temp=new  ListNode(carry);
-              head->next=temp;
-              head=head->next;
+             ListNode* temp=new ListNode(carry);
+            t->next=temp;
         }
-        //rt=reverse(rt->next);
-        return rt->next;
-        
+        return head->next;
+
     }
 };
