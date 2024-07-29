@@ -57,7 +57,7 @@ public:
        // pr(l1);
        // pr(l2);
 
-        while(l1!=NULL && l2!=NULL )
+        while( l2!=NULL )
         {
             if(l1->val != l2->val)
             return false;
