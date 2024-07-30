@@ -29,12 +29,11 @@ public:
            int re=l+ (m-->0?1:0);
            for(int j=1;j<re;j++)
            temp=temp->next;
-           if(temp)
-           {
+      
               auto t=temp->next;
               temp->next=NULL;
               temp=t;
-           }  
+           
         }
         return arr;
 
