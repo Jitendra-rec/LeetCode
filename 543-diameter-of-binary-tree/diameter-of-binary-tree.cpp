@@ -11,20 +11,26 @@
  */
 class Solution {
 public:
-    int diameterOfBinaryTree(TreeNode* root) {
-        int res = 0;
-        diameter(root, res);
-        return res;
+    int height(TreeNode* root)
+    {
+        if (root == NULL)
+        return 0;
+        int l=height(root->left);
+        int r=height(root->right);
+        int h=max(l , r);
+        return  h+1;
     }
+    int diameterOfBinaryTree(TreeNode* root) {
 
-private:
-    int diameter(TreeNode* curr, int& res){
-        if (!curr) return 0;
+        if(root ==NULL)
+        return 0;
+
+        int op1=diameterOfBinaryTree(root->left);
+        int op2=diameterOfBinaryTree(root->right);
+        int op3=height(root->left)+height(root->right);
+        int ans=max(op1,max(op2,op3));
+        return ans;
+
         
-        int left = diameter(curr->left, res);
-        int right = diameter(curr->right, res);
-
-        res = std::max(res, left + right);
-        return std::max(left, right) + 1;
     }
 };
