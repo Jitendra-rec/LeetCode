@@ -31,6 +31,6 @@ public:
          ans =false;
         bool a=isBalanced(root->left);
         bool b=isBalanced(root->right);
-        return a & b & ans;
+        return a && b && ans;
     }
 };
