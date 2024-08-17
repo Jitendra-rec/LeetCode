@@ -24,11 +24,7 @@ public:
         if(root== NULL)
         return true;
         int len=abs(height(root->left) - height(root->right));
-        bool ans=true;
-        if(len<=1)
-         ans= true;
-        else 
-         ans =false;
+        bool ans=len<=1;
         bool a=isBalanced(root->left);
         bool b=isBalanced(root->right);
         return a && b && ans;
