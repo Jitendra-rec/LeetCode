@@ -21,7 +21,7 @@ public:
         return -1;
     }
     TreeNode* solve(vector<int>& preorder, vector<int>& inorder,int &i,int s,int e,int size)
-    {   if(i>=size)
+    {   if(i==size)
             return NULL;
         if(s>e)
             return NULL;
