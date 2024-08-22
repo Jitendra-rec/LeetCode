@@ -35,7 +35,7 @@ public:
         return root;
     }
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-        int i=0,s=0,e=preorder.size()-1,size=preorder.size();
+        int i=0,s=0,e=preorder.size(),size=preorder.size();
          TreeNode* root=solve(preorder,inorder, i, s,e, size);
          return root;
     }
