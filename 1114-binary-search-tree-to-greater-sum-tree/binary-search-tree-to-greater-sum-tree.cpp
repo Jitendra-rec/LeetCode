@@ -10,21 +10,27 @@
  * };
  */
 class Solution {
-private:
-    int sum = 0;
-
-    void traverse(TreeNode* root) {
-        if (root) {
-            traverse(root->right);  // Traverse the right subtree
-            sum += root->val;  // Update the sum
-            root->val = sum;  // Update the current node's value
-            traverse(root->left);  // Traverse the left subtree
-        }
-    }
-
 public:
+    void Tsum(TreeNode* root,int& sum)
+    {
+        if(root==NULL)
+        return ;
+        
+        Tsum(root->right,sum);
+          root->val=sum+root->val;
+          sum=root->val;
+        Tsum(root->left,sum);
+       
+       
+
+    }
+   
     TreeNode* bstToGst(TreeNode* root) {
-        traverse(root);
+        int sum=0;
+        Tsum(root,sum);
         return root;
+
+
+
     }
 };
