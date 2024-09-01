@@ -5,7 +5,7 @@ public:
         if(n*m!=o.size())
         return {};
 
-        vector<vector<int>>arr(m,vector<int>(n));
+        vector<vector<int>>arr(m,vector<int>(n,0));
         int t=0;
         
         for(int i=0;i<m;i++)
