@@ -9,7 +9,7 @@ public:
           {
             if(mp.find(i-1)==mp.end())
             {   int j=i,temp=0;
-            cout<<i<<endl;
+            //cout<<i<<endl;
                 while(mp.find(j)!=mp.end())
                 {
                     temp++;j++;
