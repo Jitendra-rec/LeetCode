@@ -20,7 +20,24 @@ public:
        } 
        return st.size();
     }
+    int twoPointer(vector<int>& nums, int k)
+    {
+        sort(nums.begin(),nums.end());
+        int count=0,i=0,j=1;
+        set<pair<int,int>>st;
+        while(j<nums.size())
+        {
+            if(nums[j]-nums[i]==k && i!=j)
+            {st.insert({nums[i],nums[j]});i++;j++;}
+            else if((nums[j]-nums[i])>k)
+            i++;
+            else
+            j++;
+        }
+        return st.size();
+    }
     int findPairs(vector<int>& nums, int k) {
-      return twoLoop(nums,k);
+    //   return twoLoop(nums,k);
+        return twoPointer(nums,k);
     }
 };
