@@ -42,7 +42,7 @@ public:
         int e=nums.size()-1;
         int ans1=bsearch(nums,0,p,target);
          int ans2=bsearch(nums,p+1,e,target);
-         cout<<ans1<<" "<<ans2<<" "<<p;
+         //cout<<ans1<<" "<<ans2<<" "<<p;
          if(ans1==-1)
          return ans2;
          else
