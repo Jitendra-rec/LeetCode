@@ -5,7 +5,7 @@ public:
             return -1;
         }
 
-        int low = 1, high = 1e9;
+        int low = 1, high = *max_element(bloomDay.begin(),bloomDay.end());
         while (low < high) {
             int mid = low + (high - low) / 2;
 
