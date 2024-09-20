@@ -15,7 +15,7 @@ public:
         {
             while(i<j && !check(s[i])) i++;
             while(j>=0 && !check(s[j])) j--;
-             cout<<i<<" "<<j<<endl;
+            //  cout<<i<<" "<<j<<endl;
              if(i<=j)
              swap(s[i++],s[j--]);
         }
