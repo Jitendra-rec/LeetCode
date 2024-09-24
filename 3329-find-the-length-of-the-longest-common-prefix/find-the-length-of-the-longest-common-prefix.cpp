@@ -2,11 +2,10 @@ class tries{
 public:
     char val;
     unordered_map<char,tries*>child;
-    bool isStop;
+    bool isStop=false;
     tries(char c)
     {
         val=c;
-        isStop=false;
     }
 };
 void insert(tries* node,string s)
