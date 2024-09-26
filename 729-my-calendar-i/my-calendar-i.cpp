@@ -2,21 +2,21 @@
 
 class MyCalendar {
 public:
-    std::map<int, int> bookings; // Store start as key and end as value
+    std::map<int, int> bookings; 
 
     bool book(int start, int end) {
-        auto next = bookings.lower_bound(start); // First booking with start time >= current start
+        auto next = bookings.upper_bound(start); 
 
-        // Check if there is any overlap with the previous or next event
+       
         if (next != bookings.end() && next->first < end) {
-            return false; // Overlap with the next event
+            return false;
         }
 
         if (next != bookings.begin() && (--next)->second > start) {
-            return false; // Overlap with the previous event
+            return false;
         }
 
-        // No overlap, safe to book the event
+    
         bookings[start] = end;
         return true;
     }
