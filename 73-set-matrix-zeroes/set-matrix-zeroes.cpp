@@ -12,11 +12,12 @@ void solve(vector<vector<int>>& matrix,int i,int j){
         if( matrix[k][j]!=0)
             matrix[k][j]=78;
     }
-    cout<<i<<j<<endl;
+   // cout<<i<<j<<endl;
 
 }
 void setZeroes(vector<vector<int>>& matrix) {
    // vector<vector<int>>ans;
+
         int row=matrix.size();
         int col=matrix[0].size();
         for(int i=0;i<row;i++){
