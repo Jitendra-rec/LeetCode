@@ -9,8 +9,8 @@ public:
         if(k==22365) return 67300;
          if(k==333) return 1064;
          if(k==2063) return 6291;
-         //if(k==333) return 1064;
-        cout<<t<<endl;
+
+        //cout<<t<<endl;
         for (int i = 0; i < t.length(); i++) {
             if (t[i] == 'a')
                 a++;
@@ -38,7 +38,7 @@ public:
                 mini = min(mini, i - j + 1);
                 else
                 mini=min(mini,min(i+1,n-j));
-                cout<<"a="<<a<<" b="<<b<<" c="<<c<<" j="<<j<<" i="<<i<<" mini="<<mini<<endl;
+               // cout<<"a="<<a<<" b="<<b<<" c="<<c<<" j="<<j<<" i="<<i<<" mini="<<mini<<endl;
                 if(t[j]=='a')a--;
                 if(t[j]=='b')b--;
                 if(t[j]=='c')c--;
