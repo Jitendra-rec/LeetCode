@@ -75,7 +75,7 @@ void setZeroes(vector<vector<int>>& mat) {
             if(mat[0][i]==0)
             col=true;
         }
-        cout<<row<<" "<<col<<endl;
+       // cout<<row<<" "<<col<<endl;
         for(int i=1;i<n;i++)
         for(int j=1;j<m;j++)
         {
@@ -101,20 +101,19 @@ void setZeroes(vector<vector<int>>& mat) {
         }
          if(col)
         {
-            //cout<<"helo "<<n<<endl;
             for(int i=0;i<m;i++)
             mat[0][i]=0;
         }
 
-        for(int i=0;i<n;i++)
-        {
-        for(int j=0;j<m;j++)
-        {
-           //if(mat[i][0]==0 || mat[0][j]==0)
-            cout<<mat[i][j]<<" ";
-        }
-        cout<<endl;
-        }
+        // for(int i=0;i<n;i++)
+        // {
+        // for(int j=0;j<m;j++)
+        // {
+        //    //if(mat[i][0]==0 || mat[0][j]==0)
+        //     cout<<mat[i][j]<<" ";
+        // }
+        // cout<<endl;
+        // }
      }
 
 
